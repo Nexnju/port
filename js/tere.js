@@ -16,7 +16,7 @@ document.querySelectorAll('[data-count]').forEach(el=>{
 });
 
 // Ticker
-const items=[['VAT','16.0%',''],['PAYE','Filed','up'],['KES/USD','129.20','dn'],['Net Profit','+12.4%','up'],['Cash Flow','Positive','up'],['Trial Balance','Balanced','up'],['Invoices','Reconciled','up'],['Corp Tax','30%',''],['Payroll','On time','up'],['Audit','Ready','up']];
+const items=[['VAT','16.0%',''],['PAYE','Filed','up'],['M-Pesa Recon','Matched','up'],['Net Profit','+12.4%','up'],['Cash Flow','Positive','up'],['Trial Balance','Balanced','up'],['Invoices','Reconciled','up'],['Corp Tax','30%',''],['Payroll','On time','up'],['Audit','Ready','up']];
 const html=items.map(([a,b,c])=>`<div><b>${a}</b><i class="${c}" style="font-style:normal">${b}</i></div>`).join('');
 document.getElementById('track').innerHTML=html+html;
 
