@@ -574,3 +574,50 @@ function terminalTyping() {
 
 
 terminalTyping();
+
+/* =========================================================
+   PHONE MENU  (js/menu.js)
+   Opens and closes the hamburger menu.
+   Load it AFTER port4.js:  <script src="js/menu.js"></script>
+========================================================= */
+
+(function () {
+
+    var header = document.querySelector('.navbar');
+    var button = document.getElementById('menuToggle');
+    var nav    = document.getElementById('siteNav');
+
+    if (!header || !button || !nav) return;
+
+    function setMenu(open) {
+        header.classList.toggle('nav-open', open);
+        document.body.classList.toggle('menu-open', open);
+        button.setAttribute('aria-expanded', open ? 'true' : 'false');
+        button.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    }
+
+    // Tap the button to open / close
+    button.addEventListener('click', function () {
+        setMenu(!header.classList.contains('nav-open'));
+    });
+
+    // Tapping a link closes the menu (the page then scrolls to the section)
+    nav.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () { setMenu(false); });
+    });
+
+    // Tapping "Contact Me" in the top bar also closes it
+    var contactBtn = header.querySelector('.contact-button');
+    if (contactBtn) contactBtn.addEventListener('click', function () { setMenu(false); });
+
+    // Escape key closes it
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') setMenu(false);
+    });
+
+    // If the screen becomes wide (e.g. phone rotated / desktop), reset it
+    window.addEventListener('resize', function () {
+        if (window.innerWidth > 900) setMenu(false);
+    });
+
+})();
