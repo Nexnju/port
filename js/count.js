@@ -47,3 +47,49 @@ function draw(){
   ctx.globalAlpha=1;requestAnimationFrame(draw);
 }
 addEventListener('resize',size);size();draw();
+
+/* =========================================================
+   SERVICES SECTION – 100+ counter
+   Save as js/services.js and load it AFTER port4.js:
+   <script src="js/services.js"></script>
+========================================================= */
+
+(function () {
+
+    var el = document.getElementById('svcNum');
+
+    // Do nothing if the element is missing or the browser is too old
+    if (!el || !('IntersectionObserver' in window)) return;
+
+    // Respect "reduce motion": just show 100
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    var target = +el.dataset.target;
+    el.textContent = '0';
+
+    var observer = new IntersectionObserver(function (entries) {
+
+        if (!entries[0].isIntersecting) return;
+        observer.disconnect();
+
+        var start = null;
+        var duration = 1600;
+
+        requestAnimationFrame(function step(time) {
+
+            if (!start) start = time;
+
+            var progress = Math.min((time - start) / duration, 1);
+
+            // ease-out so it slows down near 100
+            el.textContent = Math.round(target * (1 - Math.pow(1 - progress, 3)));
+
+            if (progress < 1) requestAnimationFrame(step);
+
+        });
+
+    }, { threshold: 0.5 });
+
+    observer.observe(el);
+
+})();
