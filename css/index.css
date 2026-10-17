@@ -18,7 +18,7 @@
     --max-width: 1250px;
     --text-primary: #c20000;
     --text-muted: rgba(255,255,255,.45);
-    --accent: #0df53b;
+    --accent: #E1AD01;
     --transition: .3s;
     --font-heading: "Inter", sans-serif;
 }
@@ -155,7 +155,7 @@ button:focus-visible {
     height: 34px;
     display: grid;
     place-items: center;
-    background-color: #0df53b;
+    background-color: #E1AD01;
     border-radius: 9px;
     font-family: var(--font-heading);
     font-weight: 800;
@@ -356,9 +356,9 @@ nav a:hover {
 .release-dot {
     width: 10px;
     height: 10px;
-    background: #5cff7d;
+    background: #E1AD01;
     border-radius: 50%;
-    box-shadow: 0 0 12px #5cff7d;
+    box-shadow: 0 0 12px #E1AD01;
 }
 
 @keyframes shake {
@@ -476,7 +476,7 @@ nav a:hover {
 }
 
 .stat strong span {
-    color: #0df53b;
+    color: #E1AD01;
 }
 
 .stat p {
@@ -583,7 +583,7 @@ nav a:hover {
 .about-text .question strong {
     display: block;
     margin-top: 8px;
-    color: #9affac;
+    color: #E1AD01;
 }
 
 /* process timeline */
@@ -714,7 +714,7 @@ nav a:hover {
 .project-category {
     font-family: "DM Mono", monospace;
     font-size: 9px;
-    color: #79ff94;
+    color: #E1AD01;
     letter-spacing: 1px;
 }
 
@@ -844,7 +844,7 @@ nav a:hover {
     font-family: "DM Mono", monospace;
     font-size: 11px;
     font-style: normal;
-    color: #79ff94;
+    color: #E1AD01;
 }
 
 
@@ -1015,7 +1015,7 @@ nav a:hover {
 }
 
 .svc-node:hover rect {
-    stroke: #0df53b;
+    stroke: #E1AD01;
 }
 
 .svc-core {
@@ -1033,7 +1033,7 @@ nav a:hover {
 
 .svc-ring {
     fill: none;
-    stroke: #0df53b;
+    stroke: #E1AD01;
     stroke-width: 1.5;
     opacity: 0;
     transform-origin: 200px 200px;
@@ -1162,7 +1162,7 @@ nav a:hover {
     font-size: 20px;
     font-weight: 600;
     letter-spacing: -.5px;
-    color: #77e11b;
+    color: #E1AD01;
 }
 
 .svc-value p {
@@ -1490,7 +1490,7 @@ nav a:hover {
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background: #71d88c;
+    background: #E1AD01;
     box-shadow: 0 0 12px rgba(113,216,140,.7);
     animation: statusPulse 2s infinite;
 }
@@ -1590,7 +1590,7 @@ nav a:hover {
     line-height: 1.7;
 }
 
-.terminal-green { color: #7fd99a; }
+.terminal-green { color: #E1AD01; }
 .terminal-blue  { color: #7ca7ff; }
 
 .terminal-command {
@@ -1806,7 +1806,7 @@ nav a:hover {
 }
 
 .contact-item a:hover {
-    color: #7cff96;
+    color: #E1AD01;
 }
 
 
@@ -2184,7 +2184,7 @@ nav a:hover {
     }
 
     .navbar.nav-open nav a:hover {
-        color: #0df53b;
+        color: #E1AD01;
     }
 
     body.menu-open {
