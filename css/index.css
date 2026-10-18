@@ -144,34 +144,18 @@ button:focus-visible {
     background: linear-gradient(to bottom, rgba(5,5,5,.85), transparent);
 }
 
+
 .logo {
     display: flex;
     align-items: center;
-    gap: 7px;
 }
 
-.logo-mark {
-    width: 34px;
-    height: 34px;
-    display: grid;
-    place-items: center;
-    background-color: #E1AD01;
-    border-radius: 9px;
-    font-family: var(--font-heading);
-    font-weight: 800;
-    font-size: 17px;
+.logo-img{
+    height: 90px; /* Matches your header's original scale */
+    width: auto;  /* Keeps the horizontal aspect ratio perfect */
 }
 
-.logo-name {
-    font-family: var(--font-heading);
-    font-size: 18px;
-    font-weight: 800;
-    letter-spacing: -0.5px;
-}
 
-.logo-name span {
-    color: var(--accent);
-}
 
 nav {
     display: flex;
@@ -2177,10 +2161,10 @@ nav a:hover {
     }
 
     .navbar.nav-open nav a {
-        font-size: 28px;
-        font-weight: 700;
+        font-size: 20px;
+        font-weight: 500;
         letter-spacing: -1px;
-        color: #ef5353;
+        color:  #E1AD01;
     }
 
     .navbar.nav-open nav a:hover {
