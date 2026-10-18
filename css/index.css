@@ -2013,6 +2013,7 @@ nav a:hover {
 
     .hero {
         width: 100%;
+        height:auto;
         min-height: 100svh;
         padding: 100px 18px 50px;
         overflow: hidden;
