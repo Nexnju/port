@@ -1,5 +1,5 @@
 /* ============ EDIT THIS SECTION ============ */
-const EMAIL = "educationconceptssolutions@gmail.com";
+const EMAIL = "concepts.solutions.ke@gmail.com";
 
 // Add, remove or edit jobs here. They appear as cards automatically.
 const JOBS = [
@@ -127,22 +127,30 @@ document.addEventListener("keydown", e => {
 function sendMail(subject, lines) {
   window.location.href = "mailto:" + EMAIL + "?subject=" + encodeURIComponent(subject) +
     "&body=" + encodeURIComponent(lines.join("\n"));
-}
-$("#recruitForm").addEventListener("submit", e => {
+}const rForm = $("#recruitForm"), recOnly = $(".recruit-only");
+
+rForm.addEventListener("change", e => {
+  if (e.target.name === "service") recOnly.hidden = e.target.value !== "Recruit";
+});
+
+rForm.addEventListener("submit", e => {
   e.preventDefault();
-  const d = Object.fromEntries(new FormData(e.target));
-  sendMail("Recruitment request: " + d.position + " (" + d.org + ")", [
+  const d = Object.fromEntries(new FormData(rForm));
+  const lines = [
+    "Service: " + d.service,
     "School/Institution: " + d.org,
     "Contact: " + d.contact,
     "Email: " + d.email,
-    "Phone: " + d.phone,
-    "Position: " + d.position,
-    "Vacancies: " + d.count,
-    "",
-    "Details:", d.details || "-"
-  ]);
-  closeModal($("#recruitModal"));
-  e.target.reset();
+    "Phone: " + d.phone
+  ];
+  if (d.service === "Recruit") lines.push("Position: " + (d.position || "-"), "Vacancies: " + d.count);
+  lines.push("", "Details:", d.details || "-");
+  sendMail(d.service + " enquiry: " + d.org, lines);
+
+  $("#formView").hidden = true;
+  $("#thanks").hidden = false;
+  rForm.reset();
+  recOnly.hidden = true;
 });
 $("#contactForm").addEventListener("submit", e => {
   e.preventDefault();
